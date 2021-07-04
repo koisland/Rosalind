@@ -1,0 +1,6 @@
+>Rosalind_1
+GATTACAA
+>Rosalind_2
+TAGACCAA
+>Rosalind_3
+ATACAA
