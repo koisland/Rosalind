@@ -1,6 +1,5 @@
 #include "read_file.c"
-
-#include <stdio.h>q
+#include <stdio.h>
 
 int main(){
 
@@ -30,6 +29,7 @@ int main(){
         }
     }
 
+    free(t.ptr);
     printf("Total seq length: %d\n",  t.fsize);
     printf("%d, %d, %d, %d ", a_nt, t_nt, g_nt, c_nt);
 }

@@ -2,12 +2,14 @@
 #include <stdio.h>
 
 typedef struct {
-    char* ptr, fsize;
+    char* ptr;
+    unsigned long fsize;
 } text ;
 
 text read_txt(char fname[]){
      // pointer to buffer which will store file contents and filesize
-    char* buff, fsize;
+    char* buff;
+    unsigned long fsize;
     text t;
     int errnum;
 
@@ -31,7 +33,6 @@ text read_txt(char fname[]){
     buff = (char*)malloc(fsize);
     // read file contents to buffer
     int ret_code = fread(buff, 1, fsize, fp);
-
     // close file
     fclose(fp);
 
@@ -46,6 +47,7 @@ text read_txt(char fname[]){
     }
     else {
         fprintf(stderr, "Error reading file.\n");
+        free(buff);
         exit(1);
     }
 
