@@ -1,4 +1,5 @@
 #include <errno.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 typedef struct {
@@ -18,7 +19,7 @@ text read_txt(char fname[]){
         // assign error number
         errnum = errno;
         // fprintf allows other output streams beside stdout
-        fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
+        fprintf(stderr, "Error opening file.\n");
         exit(1);
     }
 
